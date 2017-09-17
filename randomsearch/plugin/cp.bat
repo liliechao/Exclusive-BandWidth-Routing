@@ -1,0 +1,1 @@
+copy target\randomsearch.plugin-0.4.0-Helium.jar ..\..\distribution\opendaylight\target\distribution.opendaylight-osgipackage\opendaylight\plugins\org.opendaylight.controller.randomsearch.plugin-0.4.0-Helium.jar

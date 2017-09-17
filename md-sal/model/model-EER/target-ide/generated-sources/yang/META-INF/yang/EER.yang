@@ -1,0 +1,93 @@
+module EER {
+  namespace "urn:opendaylight:EER";
+  prefix EER;
+  import ietf-inet-types {prefix inet;}
+  revision "2013-09-11" {
+    description "TCP mapreduce module";
+  }
+  rpc BEER {
+    description "Starting a mapreduce flow";
+    input {
+      leaf srcAddr {
+        type inet:ipv4-address;
+      }
+      leaf srcPort{
+	type int16;
+      }
+      leaf dstAddr {
+        type inet:ipv4-address;
+      }
+      leaf dstPort{
+        type int16;
+      }
+      leaf ms {
+        type int32;
+      }
+      leaf MB{
+        type int32;
+      }
+    }
+    output {
+      leaf start-result {
+        type enumeration {
+          enum "started" {
+            value 0;
+            description "started";
+          }
+          enum "notstarted" {
+            value 1;
+            description "not started";
+          }
+          enum "error" {
+            value 2;
+            description "Error happened";
+          }
+        }
+        description "Result types";
+      }
+    }
+  }
+
+  rpc EXR {
+    description "Starting a mapreduce flow";
+    input {
+      leaf srcAddr {
+        type inet:ipv4-address;
+      }
+      leaf srcPort{
+	type int16;
+      }
+      leaf dstAddr {
+        type inet:ipv4-address;
+      }
+      leaf dstPort{
+        type int16;
+      }
+      leaf ms {
+        type int16;
+      }
+      leaf MB{
+        type int16;
+      }
+    }
+    output {
+      leaf end-result {
+        type enumeration {
+          enum "ended" {
+            value 0;
+            description "ended";
+          }
+          enum "notended" {
+            value 1;
+            description "not ended";
+          }
+          enum "error" {
+            value 2;
+            description "Error happened";
+          }
+        }
+        description "Result types";
+      }
+    }
+  }
+}
